@@ -1,0 +1,210 @@
+<sentence id="1" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks all file, type and score correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1 // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="2" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, but 1 token from one alignment to other alignmet, type and score correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 <==> 4 5 6 7 8 // SPE1_FACT // 3 // xxx TOKEN 6 TO 7
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+6 7 <==> 10 // EQUI // 5 // xxx TOKEN 6 MOVED HERE
+</alignment>
+</sentence>
+
+
+<sentence id="3" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, but 2 tokens from one alignment to other alignmet, type and score correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 <==> 4 5 6 7 8 // SPE1_FACT // 3 // xxx TOKEN 5 and 6 TO 7
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+5 6 7 <==> 10 // EQUI // 5 // xxx TOKEN 5 and 6 MOVED HERE
+</alignment>
+</sentence>
+
+
+<sentence id="4" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, but one chunk (6 tokens) split in two with ALIC in sentence 1, rest correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 <==> 4 5 6 7 8 // SPE1_FACT // 3 // xxxx chunk split in 2
+4 5 6 <==> 0 // ALIC // 0 // xxxx new chunk
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="5" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, but one token from chunk in sent2 (5 tokens) move to ALIC, rest correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 // SPE1_FACT // 3 // xxx chunk split in 2
+0  <==> 8 // ALIC // 0 // xxxx new chunk
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="6" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, but one one token from chunk in sent1 (6 tokens) move to ALIC
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 <==> 4 5 6 7 8 // SPE1_FACT // 3 // xxx chunk split in 2
+6  <==> 0 // ALIC // 0 // xxxx new chunk
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="7" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Only main tokens, rest NOALI, type and score correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 <==> 4 // SPE1_FACT // 3 // xxxx one token only
+2 3 4 5 6 <==> 0 // NOALI // 0 // xxxx to noali
+0 <==> 5 6 7 8 // NOALI // 3 // xxx to noali
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+
+<sentence id="8" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Split chunks in all tokens, but align them all, type and score correct
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1  <==> 4 // SPE1_FACT // 3 //  xxxx
+2  <==> 5 // SPE1_FACT // 3 //  xxxx
+3 <==> 6 // SPE1_FACT // 3 //  xxxx
+4 <==> 7 // SPE1_FACT // 3 //  xxxx
+5 6 <==> 8 // SPE1_FACT // 3 //  xxxx
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 <==> 11 // EQUI // 5 // xxx
+9 <==> 12 // EQUI // 5 // xxx
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+
+<sentence id="9" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Same as 8, but delete all NOALI and ALIC
+<alignment>
+1  <==> 4 // SPE1_FACT // 3 //  xxxx
+2  <==> 5 // SPE1_FACT // 3 //  xxxx
+3 <==> 6 // SPE1_FACT // 3 //  xxxx
+4 <==> 8 // SPE1_FACT // 3 //  xxxx
+5 6 <==> 9 // SPE1_FACT // 3 //  xxxx
+8 <==> 11 // EQUI // 5 // xxx
+9 <==> 12 // EQUI // 5 // xxx
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+
+<sentence id="10" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Single chunks, type and score of largest chunk
+<alignment>
+1 2 3 4 5 6 7 8 9 <==> 1 2 3 4 5 6 7 8 9 10 11 12 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+</alignment>
+</sentence>
+
+
+<sentence id="11" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, all correct, but FACT missing, SIMI 3 instead of EQUI 
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1 // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // SIMI // 3 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+
+<sentence id="12" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, all correct, but FACT missing, SIMI 4 instead of EQUI 
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1 // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // SIMI // 4 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="13" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, all correct, but FACT missing, SIMI 4 instead of SPE1 2
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SIMI // 4 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="14" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+// Chunks like 1, all correct, but FACT missing, SIMI 2 instead of SPE1 2
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SIMI // 2 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+

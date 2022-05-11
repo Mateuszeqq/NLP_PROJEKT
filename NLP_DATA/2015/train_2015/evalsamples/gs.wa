@@ -1,0 +1,532 @@
+<sentence id="1" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="2" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="3" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="4" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="5" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="6" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="7" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="8" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="9" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="10" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="11" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="12" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 3 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="13" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 2 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
+<sentence id="14" status="">
+// Former Nazi death camp guard Demjanjuk dead at 91
+// John Demjanjuk , convicted Nazi death camp guard , dies aged 91
+<source>
+1 Former : 
+2 Nazi : 
+3 death : 
+4 camp : 
+5 guard : 
+6 Demjanjuk : 
+7 dead : 
+8 at : 
+9 91 : 
+</source>
+<translation>
+1 John : 
+2 Demjanjuk : 
+3 , : 
+4 convicted : 
+5 Nazi : 
+6 death : 
+7 camp : 
+8 guard : 
+9 , : 
+10 dies : 
+11 aged : 
+12 91 : 
+</translation>
+<alignment>
+0 <==> 9 // NOALI // 0 // -not aligned- <==> , 
+1 2 3 4 5 6 <==> 4 5 6 7 8 // SPE1_FACT // 2 // Former Nazi death camp guard Demjanjuk <==> convicted Nazi death camp guard 
+0 <==> 1 2 // ALIC // 0 // -not aligned- <==> John Demjanjuk 
+8 9 <==> 11 12 // EQUI // 5 // at 91 <==> aged 91 
+0 <==> 3 // NOALI // 0 // -not aligned- <==> , 
+7 <==> 10 // EQUI // 5 // dead <==> dies 
+</alignment>
+</sentence>
+
