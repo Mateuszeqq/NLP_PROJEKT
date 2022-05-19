@@ -1,6 +1,5 @@
 from sentence_transformers import SentenceTransformer
 from torch import nn
-import numpy as np
 
 
 class ClassifierSeparate(nn.Module):
