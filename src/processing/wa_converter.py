@@ -3,18 +3,15 @@ import re
 import pandas as pd
 
 
-DATASETS = ['answers-students', 'headlines', 'images']
-
-
-def prepare_data():
+def prepare_data(train_dir, test_dir, datasets):
     for i in ['train', 'test']:
-        for dataset in DATASETS:
+        for dataset in datasets:
             if i == 'test':
-                path = f'test/STSint.testinput.{dataset}.wa'
-                path_processed = f'test/processed_{dataset}.xml'
+                path = f'{test_dir}/STSint.testinput.{dataset}.wa'
+                path_processed = f'{test_dir}/processed_{dataset}.xml'
             else:
-                path = f'train/STSint.input.{dataset}.wa'
-                path_processed = f'train/processed_{dataset}.xml'
+                path = f'{train_dir}/STSint.input.{dataset}.wa'
+                path_processed = f'{train_dir}/processed_{dataset}.xml'
 
             process_dataset(path, path_processed)
 
@@ -37,6 +34,17 @@ def process_dataset(path, path_processed):
         content = f.read()
         f.seek(0)
         f.write(start_root + '\n' + content)
+
+
+# Generator dla klasy 1
+def gen_1(preds_1):
+    for i in preds_1:
+        yield i
+
+# Generator dla klasy 2
+def gen_2(preds_2):
+    for i in preds_2:
+        yield i
 
 
 def to_correct_class(idx, class_type):
@@ -71,12 +79,14 @@ def get_rows_with_nan(df):
     return rows_with_nan
 
 
-def prepare_test_wa_file(test_path, g_1, g_2, filename):
+def prepare_test_wa_file(test_path, y_pred_1, y_pred_2, filename):
+    g_1 = gen_1(y_pred_1)
+    g_2 = gen_2(y_pred_2)
+
     df = pd.read_xml(test_path)
     df.drop('status', axis=1, inplace=True)
     df.drop('id', axis=1, inplace=True)
     rows_with_nan = get_rows_with_nan(df)
-    print(rows_with_nan)
     df.dropna(axis=0, how='any', inplace=True)
 
     df['alignment'] = df['alignment'].apply(modify_alignment, args=(g_1, g_2))

@@ -1,22 +1,18 @@
 from datasets import load_metric
-from sentence_transformers import SentenceTransformer
 import numpy as np
 import torch
 
-sbert = SentenceTransformer('all-mpnet-base-v2')
+from src.visualization import plot_model_loss
 
 
-def tokenize(x):
-    return sbert.tokenize(x)
-
-
-def train_model(model, optimizer, epochs, train_dataloader, criterion, device):
+def train_model(model, optimizer, epochs, train_dataloader, criterion, device, plot_filename):
     model.train()
+    epoch_losses = []
     for epoch in range(epochs):
         losses = []
         for batch in train_dataloader:
             data, labels = batch
-            data_batch = tokenize(data)
+            data_batch = model.sbert.tokenize(data)
             labels = torch.tensor(labels, device=device)
 
             labels = labels.to(device)
@@ -30,7 +26,12 @@ def train_model(model, optimizer, epochs, train_dataloader, criterion, device):
             loss.backward()
             losses.append(loss.item())
             optimizer.step()
-        print(f'EPOCH {[epoch]} | LOSS: {np.mean(losses)}')
+
+        mean_loss = np.mean(losses)
+        epoch_losses.append(mean_loss)
+        print(f'EPOCH {[epoch + 1]} | LOSS: {mean_loss}')
+
+    plot_model_loss(epoch_losses, plot_filename)
 
 
 def get_accuracy(model, test_dataloader, device):
@@ -41,7 +42,7 @@ def get_accuracy(model, test_dataloader, device):
     model.eval()
     for batch in test_dataloader:
         data, labels = batch
-        data_batch = tokenize(data)
+        data_batch = model.sbert.tokenize(data)
 
         labels = torch.tensor(labels, device=device)
         y_true.extend(labels.cpu().numpy())
@@ -53,16 +54,18 @@ def get_accuracy(model, test_dataloader, device):
         predictions = torch.argmax(predictions, dim=1)
         y_pred.extend(predictions.cpu().numpy())
         metric.add_batch(predictions=predictions, references=labels)
+
     return metric.compute()['accuracy'], y_true, y_pred
 
 
 def train_model_connected(model_connected, optimizer_connected, epochs, train_dataloader, criterion, device):
     model_connected.train()
+    epoch_losses = []
     for epoch in range(epochs):
         losses = []
         for batch in train_dataloader:
             data, labels = batch
-            data_batch = tokenize(data)
+            data_batch = model_connected.sbert.tokenize(data)
 
             labels = torch.transpose(labels, 0, 1)
 
@@ -86,7 +89,12 @@ def train_model_connected(model_connected, optimizer_connected, epochs, train_da
             loss.backward()
             losses.append(loss.item())
             optimizer_connected.step()
-        print(f'EPOCH {[epoch]} | LOSS: {np.mean(losses)}')
+
+        mean_loss = np.mean(losses)
+        epoch_losses.append(mean_loss)
+        print(f'EPOCH {[epoch + 1]} | LOSS: {mean_loss}')
+
+    plot_model_loss(epoch_losses, 'model_connected_losses')
 
 
 def get_accuracy_connected(model_connected, test_dataloader, device):
@@ -101,7 +109,7 @@ def get_accuracy_connected(model_connected, test_dataloader, device):
         metric= load_metric("accuracy")
         for batch in test_dataloader:
             data, labels = batch
-            data_batch = tokenize(data)
+            data_batch = model_connected.sbert.tokenize(data)
 
             labels = torch.transpose(labels, 0, 1)
 
@@ -134,6 +142,7 @@ def get_accuracy_connected(model_connected, test_dataloader, device):
             acc_1 = metric.compute()['accuracy']
         else:
             acc_2 = metric.compute()['accuracy']
+
     print(f'CLASS_1 accuracy: {acc_1}')
     print(f'CLASS_2 accuracy: {acc_2}')
     return acc_1, acc_2, y_true_1, y_true_2, y_pred_1, y_pred_2

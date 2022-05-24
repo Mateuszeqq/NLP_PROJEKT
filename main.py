@@ -1,22 +1,20 @@
 import argparse
 
-from torch import nn, optim
-from torch.utils.data import DataLoader
 import torch
 
-from src.models.classifiers import ClassifierSeparate
-from src.models.dataset import MyDataset, MyDatasetConnected
-from src.operations.train_eval import train_model
-from src.processing.data import get_df, collate_fn
+from src.operations.evaluation import evaluate_separate_model, evaluate_connected_model
+from src.processing.wa_converter import prepare_test_wa_file
 
 
 parser = argparse.ArgumentParser(description='')
-parser.add_argument('--train-path', default='train/processed_headlines.xml',
-                    help='override a path for the train dataset')
+parser.add_argument('--train-paths', default='train/processed_headlines.xml',
+                    help='comma separated paths for the train datasets')
 parser.add_argument('--test-path', default='test/processed_headlines.xml',
-                    help='override a path for the test dataset')
-
-
+                    help='path for the test dataset')
+parser.add_argument('--model', default='connected',
+                    help='which model will be trained and evaluated')
+parser.add_argument('--classifier-model-name', default='all-mpnet-base-v2',
+                    help='name of the sentence transformer model')
 parser.add_argument('--batch-size', default=64,
                     help='size of mini batch used during training')
 parser.add_argument('--epochs', default=20,
@@ -25,40 +23,28 @@ parser.add_argument('--learning-rate', default=3e-4,
                     help='learning rate used during training')
 
 args = parser.parse_args()
-print(args)
 
-train_path = args.train_path
+train_paths = args.train_paths.split(',')
 test_path = args.test_path
+model = args.model
+classifier_model_name = args.classifier_model_name
 batch_size = args.batch_size
-epochs = args.epochs
+epochs = int(args.epochs)
 learning_rate = args.learning_rate
 
-print(learning_rate)
 
 if __name__ == '__main__':
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
-    df_train, y_train = get_df(train_path, labels=1)
-    df_test, y_test = get_df(test_path, labels=1)
+    if model == 'separate':
+        y_pred_1 = evaluate_separate_model(
+            device, classifier_model_name, train_paths, test_path, 1, epochs, batch_size, learning_rate)
+        y_pred_2 = evaluate_separate_model(
+            device, classifier_model_name, train_paths, test_path, 2, epochs, batch_size, learning_rate)
+    elif model == 'connected':
+        y_pred_1, y_pred_2 = evaluate_connected_model(
+            device, classifier_model_name, train_paths, test_path, epochs, batch_size, learning_rate)
+    else:
+        raise Exception("Model can be only 'separate' or 'connected'!")
 
-    train_dataset = MyDataset(df_train['text_source'].values, df_train['text_translation'].values, y_train.values, 1)
-    test_dataset = MyDataset(df_test['text_source'].values, df_test['text_translation'].values, y_test.values, 1)
-
-    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True,
-                                  collate_fn=collate_fn)
-    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=collate_fn)
-
-    model_separate = ClassifierSeparate(labels=1)
-    model_separate = model_separate.to(device)
-
-    criterion = nn.CrossEntropyLoss()
-    optimizer_separate = optim.Adam(model_separate.parameters(), lr=learning_rate)
-
-    train_model(
-        model=model_separate,
-        optimizer=optimizer_separate,
-        epochs=epochs,
-        train_dataloader=train_dataloader,
-        criterion=criterion,
-        device=device,
-    )
+    prepare_test_wa_file(test_path=test_path, y_pred_1=y_pred_1, y_pred_2=y_pred_2, filename=f'{model}_results.xml')

@@ -1,5 +1,3 @@
-import re
-
 from sklearn.utils.class_weight import compute_class_weight
 import numpy as np
 import pandas as pd
@@ -58,7 +56,7 @@ def get_df(path, labels=1):
 
     df['source'] = df['source'].apply(clear_sentence)
     df['translation'] = df['translation'].apply(clear_sentence)
-    df.dropna(how = 'any', axis=0, inplace=True)
+    df.dropna(how='any', axis=0, inplace=True)
     df['alignment'] = df['alignment'].apply(clear_alignment)
 
     new_df = df_from_alignment(df['alignment'])
