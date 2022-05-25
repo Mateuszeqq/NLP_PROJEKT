@@ -6,7 +6,7 @@ from src.operations.evaluation import evaluate_separate_model, evaluate_connecte
 from src.processing.wa_converter import prepare_test_wa_file
 
 
-parser = argparse.ArgumentParser(description='')
+parser = argparse.ArgumentParser(description='CLI wrapper for NLP classifier using BERT')
 parser.add_argument('--train-paths', default='train/processed_headlines.xml',
                     help='comma separated paths for the train datasets')
 parser.add_argument('--test-path', default='test/processed_headlines.xml',
