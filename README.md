@@ -5,6 +5,7 @@ chmod +x setup_environment.sh
 chmod +x train_and_evaluate.sh
 chmod +x evalF1_no_penalty.pl
 chmod +x evalF1_penalty.pl
+chmod +x wellformed.pl
 ./train_and_evaluate.sh
 ```
 
