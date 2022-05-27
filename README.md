@@ -1,12 +1,16 @@
 ## Uruchomienie
-Do wykonania całego działania wystarczy wykonać dwa skrypty:
+Do wykonania całego działania należy nadać potrzebne uprawnienia oraz wykonać jeden skrypt:
 ```bash
-./setup_environment.sh
+chmod +x setup_environment.sh
+chmod +x train_and_evaluate.sh
+chmod +x evalF1_no_penalty.pl
+chmod +x evalF1_penalty.pl
+chmod +x wellformed.pl
 ./train_and_evaluate.sh
 ```
 
-Pierwszy plik przygotuje środowisko poprzez stworzenie wirtualnego środowiska
-Python oraz pobranie wszystkich potrzebnych bibliotek. Drugi skrypt przygotuje dane
+Skrypt najpierw przygotuje środowisko poprzez stworzenie wirtualnego środowiska
+Python oraz pobranie wszystkich potrzebnych bibliotek. Następnie przygotuje dane
 oraz przeprowadzi cały proces trenowania modelu oraz ewaluacji.
 
 W projekcie załączono dwa skrypty w języku Python. Skrypt `prepare_data.py` przygotowuje
