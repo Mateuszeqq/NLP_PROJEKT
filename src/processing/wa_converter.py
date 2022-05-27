@@ -61,9 +61,13 @@ def modify_alignment(text, g_1, g_2):
     new_chunks = []
     for chunk in chunks:
         # Np. do NIL, 0, 1, ..., 5
-        chunk = re.sub(r'\b\s\/\/\s(\bNIL\b)*[0-6]*\s\/\/\s\b', f' // {to_correct_class(next(g_2), 2)} // ', chunk)
+        chunk = re.sub(r'\s\/\/\s(\bNIL\b)*[0-6]*\s\/\/\s', f' // {to_correct_class(next(g_2), 2)} // ', chunk)
         # Np. do EQUI, SPE1, SPE2, ...
-        chunk = re.sub(r'\b\s\/\/\s[A-Z]+[1-2]*\s\/\/\s\b', f' // {to_correct_class(next(g_1), 1)} // ', chunk)
+        chunk = re.sub(r'\s\/\/\s[A-Z]+[1-2]*\s\/\/\s', f' // {to_correct_class(next(g_1), 1)} // ', chunk)
+        # Jak NIL to musi być NOALI
+        chunk = re.sub(r'\s\/\/\s(.*?)\s\/\/\s(\bNIL\b)\s\/\/\s', f' // NOALI // 0 // ', chunk)
+        # A Jak NOALI to musi być 0
+        chunk = re.sub(r'\s\/\/\s(\bNOALI\b)\s\/\/\s(.*?)\s\/\/\s', f' // NOALI // 0 // ', chunk)
         new_chunks.append(chunk)
     text = '\n'.join(new_chunks)
 
@@ -87,6 +91,7 @@ def prepare_test_wa_file(test_path, y_pred_1, y_pred_2, filename):
     df.drop('status', axis=1, inplace=True)
     df.drop('id', axis=1, inplace=True)
     rows_with_nan = get_rows_with_nan(df)
+    rows_with_nan = [x+1 for x in rows_with_nan]
     df.dropna(axis=0, how='any', inplace=True)
 
     df['alignment'] = df['alignment'].apply(modify_alignment, args=(g_1, g_2))
