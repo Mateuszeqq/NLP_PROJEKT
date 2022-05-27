@@ -52,15 +52,37 @@ class ClassifierConnected(nn.Module):
         self.train_sbert(False)
         self.class_1 = nn.Sequential(
             nn.Flatten(),
-            nn.Dropout(p=0.2),
-            nn.Linear(in_features=768, out_features=len(self.classes_1)),
+            nn.Linear(in_features=768, out_features=500),
+            nn.BatchNorm1d(500),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=500, out_features=300),
+            nn.BatchNorm1d(300),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=300, out_features=100),
+            nn.BatchNorm1d(100),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=100, out_features=len(self.classes_1)),
             nn.Softmax()
         )
 
         self.class_2 = nn.Sequential(
             nn.Flatten(),
-            nn.Dropout(p=0.2),
-            nn.Linear(in_features=768, out_features=len(self.classes_2)),
+            nn.Linear(in_features=768, out_features=500),
+            nn.BatchNorm1d(500),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=500, out_features=300),
+            nn.BatchNorm1d(300),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=300, out_features=100),
+            nn.BatchNorm1d(100),
+            nn.Dropout(0.2),
+            nn.ReLU(),
+            nn.Linear(in_features=100, out_features=len(self.classes_2)),
             nn.Softmax()
         )
 
