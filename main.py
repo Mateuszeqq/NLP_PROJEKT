@@ -1,6 +1,7 @@
 import argparse
 
 import torch
+import warnings
 
 from src.operations.evaluation import evaluate_separate_model, evaluate_connected_model
 from src.processing.wa_converter import prepare_test_wa_file
@@ -34,6 +35,7 @@ learning_rate = args.learning_rate
 
 
 if __name__ == '__main__':
+    warnings.filterwarnings("ignore")
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
     if model == 'separate':
